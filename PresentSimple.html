@@ -1,0 +1,893 @@
+<html>
+  <head>
+    <title>Maya Levi - Present Simple</title>
+    <link rel="icon" type="image/x-icon" href="images/maya_levi_favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="master.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Slideshow container */
+      .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+      }
+
+      /* Next & previous buttons */
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: black;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.5s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        cursor: url("Cursor Rubin Pink/link.cur"), pointer;
+      }
+
+      /* Position the "next button" to the right */
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      /* On hover, add a black background color with a little bit see-through */
+      .prev:hover,
+      .next:hover {
+        background-color: rgb(244, 243, 240);
+      }
+
+      /* Caption text */
+      .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+      }
+
+      /* Number text (1/3 etc) */
+      .numbertext {
+        color: black;
+        font-size: 14px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 0;
+      }
+
+      /* Fading animation */
+      .fade {
+        animation-name: fade;
+        animation-duration: 1s;
+      }
+      .web-design {
+        font-weight: 300;
+        font-style: italic;
+        font-size: 25px;
+        margin-left: 3vw;
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .button {
+        cursor: url("Cursor Rubin Pink/Arrow.cur"), default;
+      }
+      .button p {
+        cursor: url("Cursor Rubin Pink/Arrow.cur"), default;
+      }
+
+      @media (max-width: 768px) {
+        .web-design {
+          display: block;
+          margin: auto;
+        }
+      }
+    </style>
+
+    <script>
+      // window.onload = function () {
+      //   let slideIndex = 1;
+      //   showSlides(slideIndex);
+
+      //   // Next/previous controls
+      //   function plusSlides(n) {
+      //     showSlides((slideIndex += n));
+      //   }
+
+      //   // Thumbnail image controls
+      //   function currentSlide(n) {
+      //     showSlides((slideIndex = n));
+      //   }
+
+      //   function showSlides(n) {
+      //     let i;
+      //     let slides = document.getElementsByClassName("mySlides");
+      //     let dots = document.getElementsByClassName("dot");
+
+      //     if (slides.length === 0) return; // Prevent errors if no slides exist
+
+      //     if (n > slides.length) {
+      //       slideIndex = 1;
+      //     }
+      //     if (n < 1) {
+      //       slideIndex = slides.length;
+      //     }
+
+      //     for (i = 0; i < slides.length; i++) {
+      //       slides[i].style.display = "none";
+      //     }
+
+      //     for (i = 0; i < dots.length; i++) {
+      //       dots[i].className = dots[i].className.replace(" active", "");
+      //     }
+
+      //     slides[slideIndex - 1].style.display = "block";
+
+      //     if (dots.length > 0) {
+      //       dots[slideIndex - 1].className += " active";
+      //     }
+      //   }
+
+      //   // Expose functions to global scope (for onclick handlers)
+      //   window.plusSlides = plusSlides;
+      //   window.currentSlide = currentSlide;
+      // };
+
+      var slideIndex = 1;
+      function nextside() {
+        if (slideIndex < 40) {
+          slideIndex++;
+        } else {
+          slideIndex = 1;
+        }
+        document.getElementById("imgSlide").src =
+          "images/PresentSimple" + slideIndex + ".jpg";
+        document.getElementById("imgNumber").innerHTML = slideIndex + "/40";
+      }
+      function prevside() {
+        if (slideIndex > 1) {
+          slideIndex--;
+        } else {
+          slideIndex = 40;
+        }
+        document.getElementById("imgSlide").src =
+          "images/PresentSimple" + slideIndex + ".jpg";
+        document.getElementById("imgNumber").innerHTML = slideIndex + "/40";
+      }
+    </script>
+  </head>
+  <body>
+    <table id="navbar" class="navbar" style="width: 100%">
+      <tr>
+        <td>
+          <a href="index.html"
+            ><img src="images/maya_levi_favicon.png" style="width: 40px"
+          /></a>
+        </td>
+        <td style="padding-right: 25vw; text-align: left">
+          <h4 class="logo_name" style="margin: auto 0">
+            <a href="index.html">MAYA LEVI</a>
+          </h4>
+        </td>
+        <td style="padding-right: 5vw" class="not-on-mobile">
+          <h4 style="margin: auto 0"><a href="index.html">Home</a></h4>
+        </td>
+        <td style="padding-right: 5vw" class="not-on-mobile">
+          <h4 style="margin: auto 0"><a href="Projects.html">Projects</a></h4>
+        </td>
+        <td style="padding-right: 5vw" class="not-on-mobile">
+          <h4 style="margin: auto 0"><a href="AboutMe.html">About Me</a></h4>
+        </td>
+        <td class="not-on-mobile">
+          <button
+            class="button"
+            onclick="location.href='ContactPage.html'"
+            style="cursor: url('Cursor Rubin Pink/link.cur'), pointer"
+          >
+            <p style="cursor: url('Cursor Rubin Pink/link.cur'), pointer">
+              Contact
+            </p>
+          </button>
+        </td>
+        <td class="hamburger">
+          <button
+            style="border: none; background-color: transparent"
+            onclick="openHamburger();"
+          >
+            <img src="SVG/hamburger-menu.svg" />
+          </button>
+        </td>
+      </tr>
+    </table>
+    <div
+      style="vertical-align: middle; text-align: left"
+      id="hamburgerManue"
+      class="hamburger_manu"
+    >
+      <button
+        class="close_hamburger"
+        style="
+          border: none;
+          background-color: transparent;
+          margin: 3vh auto 0 3vh;
+          font-size: 20px;
+        "
+        onclick="closeHamburger();"
+      >
+        &#x2715;
+      </button>
+
+      <table
+        align="center"
+        style="margin-top: 10vh; text-align: center"
+        cellspacing="20"
+      >
+        <tr>
+          <td>
+            <h4 style="font-weight: 300">
+              <a href="index.html" onclick="closeHamburger();">Home</a>
+            </h4>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h4 style="font-weight: 300">
+              <a href="Projects.html" onclick="closeHamburger();">Projects</a>
+            </h4>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h4 style="font-weight: 300">
+              <a href="AboutMe.html" onclick="closeHamburger();">About Me</a>
+            </h4>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button
+              style="background-color: white"
+              class="button"
+              onclick="location.href='ContactPage.html'"
+            >
+              <p>Contact</p>
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      function openHamburger() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        document.getElementById("hamburgerManue").style.transform =
+          "translateY(0)";
+        document.getElementById("navbar").style.display = "none";
+        document.body.style.overflow = "hidden";
+      }
+      function closeHamburger() {
+        document.getElementById("hamburgerManue").style.transform =
+          "translateY(-150%)";
+        document.getElementById("navbar").style.display = "table";
+        document.body.style.overflow = "auto";
+      }
+
+      // Select navbar element
+      const navbar = document.querySelector(".navbar");
+      let lastScrollTop = 0; // Track the last scroll position
+      const hideThreshold = 100; // Scroll distance before hiding
+      const showThreshold = 50; // Scroll distance before showing
+
+      // Smooth transition for navbar
+      navbar.style.transition = "transform 0.3s ease-in-out";
+
+      document.addEventListener("scroll", () => {
+        const scrollTop = window.scrollY; // Get current scroll position
+        const maxScroll = 500; // Adjust for transparency effect
+        const opacity = Math.max(0.5, 1 - scrollTop / maxScroll); // Calculate opacity
+
+        // Update navbar background opacity
+        navbar.style.backgroundColor = `rgba(255, 255, 255, ${opacity})`;
+
+        // Check scroll direction
+        if (scrollTop > lastScrollTop && scrollTop > hideThreshold) {
+          // Scrolling down - Hide navbar
+          navbar.style.transform = "translateY(-100%)";
+        } else if (scrollTop < lastScrollTop && scrollTop > showThreshold) {
+          // Scrolling up - Show navbar
+          navbar.style.transform = "translateY(0)";
+        }
+
+        // Update last scroll position
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+      });
+    </script>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <span class="mobile_block" style="float: left"
+      ><button class="button" style="margin-right: 0.5vw">
+        <p>Brand Design</p>
+      </button>
+      <button class="button" style="margin-right: 0.5vw">
+        <p>Web Design</p>
+      </button></span
+    >
+    <br />
+    <br />
+    <span style="float: left">
+      <span
+        style="
+          font-weight: 300;
+          font-style: italic;
+          font-size: 25px;
+          margin-right: 1vh;
+        "
+        >PRESENT SIMPLE</span
+      >
+      <span style="font-weight: 200">[2023]</span></span
+    >
+    <span class="desktop_block" style="float: right"
+      ><button class="button" style="margin-right: 0.5vw">
+        <p>Brand Design</p>
+      </button>
+      <button class="button" style="margin-right: 0.5vw">
+        <p>Web Design</p>
+      </button></span
+    >
+    <br />
+    <br />
+    <p class="desktop_block" style="margin-bottom: 10vh">
+      Present Simple is a platform that makes sustainable living<br />
+      approachable through small, practical steps. Built around the<br />
+      idea of a toolbox, it encourages change "One Tool at a Time"<br />
+      (01AAT). Created in a fourth-year course, this project brought a<br />
+      real client's vision to life.
+    </p>
+    <p class="mobile_block" style="margin-bottom: 10vh">
+      Present Simple is a platform that makes<br />
+      sustainable living approachable through small,<br />
+      practical steps. Built around the idea of a<br />
+      toolbox, it encourages change "One Tool at a<br />
+      Time" (01AAT). Created in a fourth-year course,<br />
+      this project brought a real client's vision to life.
+    </p>
+
+    <span
+      style="
+        font-weight: 300;
+        font-style: italic;
+        font-size: 25px;
+        margin-left: 3.5vw;
+      "
+      >BRAND BOOK:</span
+    >
+    <div class="slideshow-container" style="margin-bottom: 10vh">
+      <div class="mySlides fade">
+        <div class="numbertext" id="imgNumber">1 / 40</div>
+        <img
+          id="imgSlide"
+          src="images/PresentSimple1.jpg"
+          style="width: 100%"
+        />
+      </div>
+
+      <!-- <div class="mySlides fade">
+        <div class="numbertext">2 / 40</div>
+        <img src="images/PresentSimple2.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 40</div>
+        <img src="images/PresentSimple3.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">4 / 40</div>
+        <img src="images/PresentSimple4.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">5 / 40</div>
+        <img src="images/PresentSimple5.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">6 / 40</div>
+        <img src="images/PresentSimple6.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">7 / 40</div>
+        <img src="images/PresentSimple7.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">8 / 40</div>
+        <img src="images/PresentSimple8.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">9 / 40</div>
+        <img src="images/PresentSimple9.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">10 / 40</div>
+        <img src="images/PresentSimple10.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">11 / 40</div>
+        <img src="images/PresentSimple11.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">12 / 40</div>
+        <img src="images/PresentSimple12.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">13 / 40</div>
+        <img src="images/PresentSimple13.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">14 / 40</div>
+        <img src="images/PresentSimple14.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">15 / 40</div>
+        <img src="images/PresentSimple15.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">16 / 40</div>
+        <img src="images/PresentSimple16.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">17 / 40</div>
+        <img src="images/PresentSimple17.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">18 / 40</div>
+        <img src="images/PresentSimple18.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">19 / 40</div>
+        <img src="images/PresentSimple19.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">20 / 40</div>
+        <img src="images/PresentSimple20.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">21 / 40</div>
+        <img src="images/PresentSimple21.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">22 / 40</div>
+        <img src="images/PresentSimple22.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">23 / 40</div>
+        <img src="images/PresentSimple23.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">24 / 40</div>
+        <img src="images/PresentSimple24.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">25 / 40</div>
+        <img src="images/PresentSimple25.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">26 / 40</div>
+        <img src="images/PresentSimple26.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">27 / 40</div>
+        <img src="images/PresentSimple27.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">28 / 40</div>
+        <img src="images/PresentSimple28.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">29 / 40</div>
+        <img src="images/PresentSimple29.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">30 / 40</div>
+        <img src="images/PresentSimple30.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">31 / 40</div>
+        <img src="images/PresentSimple31.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">32 / 40</div>
+        <img src="images/PresentSimple32.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">33 / 40</div>
+        <img src="images/PresentSimple33.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">34 / 40</div>
+        <img src="images/PresentSimple34.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">35 / 40</div>
+        <img src="images/PresentSimple35.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">36 / 40</div>
+        <img src="images/PresentSimple36.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">37 / 40</div>
+        <img src="images/PresentSimple37.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">38 / 40</div>
+        <img src="images/PresentSimple38.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">39 / 40</div>
+        <img src="images/PresentSimple39.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">40 / 40</div>
+        <img src="images/PresentSimple40.jpg" style="width: 100%" />
+      </div> -->
+
+      <!-- Next and previous buttons -->
+      <a class="prev" onclick="prevside()">&#10094;</a>
+      <a class="next" onclick="nextside()">&#10095;</a>
+    </div>
+
+    <span
+      style="
+        font-weight: 300;
+        font-style: italic;
+        font-size: 25px;
+        margin-left: 3.5vw;
+      "
+      >GRAPHIC ELEMENTS:</span
+    >
+    <img
+      src="images/PresentSimple_page.png"
+      style="width: 93%; display: block; margin: 2vh auto 15vh auto"
+    />
+
+    <span class="web-design">WEB DESIGN:</span>
+    <div align="center" style="margin: 0 auto 15vh auto">
+      <video
+        id="myVideo"
+        style="width: 80vw"
+        autoplay
+        loop
+        muted
+        playsinline
+        webkit-playsinline
+      >
+        <source src="videos/PresentSimpleVideo.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <table class="desktop_table" style="width: 95%" align="center">
+      <tr>
+        <td>
+          <span
+            style="
+              font-weight: 300;
+              font-style: italic;
+              font-size: 25px;
+              margin-left: 3.5vw;
+              text-decoration: underline;
+            "
+            >MAGAZINE:</span
+          >
+        </td>
+        <td style="text-align: right">
+          <img
+            src="images/PresentSimpleMagazine.png"
+            style="display: block; margin-left: auto; margin-bottom: 5vh"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span
+            style="
+              font-weight: 300;
+              font-style: italic;
+              font-size: 25px;
+              margin-left: 3.5vw;
+              text-decoration: underline;
+            "
+            >PERSONAL SPACE:</span
+          >
+        </td>
+        <td style="text-align: right">
+          <img
+            src="images/PresentSimplePersonalSpace.png"
+            style="display: block; margin-left: auto; margin-bottom: 20vh"
+          />
+        </td>
+      </tr>
+    </table>
+    <table align="center" class="mobile_block" style="text-align: center">
+      <tr>
+        <td>
+          <span
+            style="
+              font-weight: 300;
+              font-style: italic;
+              font-size: 25px;
+              margin-left: 3.5vw;
+              text-decoration: underline;
+            "
+            >MAGAZINE:</span
+          >
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: right">
+          <img
+            src="images/PresentSimpleMagazine.png"
+            style="
+              display: block;
+              margin-left: auto;
+              margin-bottom: 5vh;
+              width: 95vw;
+            "
+          />
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <span
+            style="
+              font-weight: 300;
+              font-style: italic;
+              font-size: 25px;
+              margin-left: 3.5vw;
+              text-decoration: underline;
+            "
+            >PERSONAL SPACE:</span
+          >
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: right">
+          <img
+            src="images/PresentSimplePersonalSpace.png"
+            style="
+              display: block;
+              margin-left: auto;
+              margin-bottom: 20vh;
+              width: 95vw;
+            "
+          />
+        </td>
+      </tr>
+    </table>
+
+    <span
+      style="
+        font-weight: 300;
+        font-style: italic;
+        font-size: 25px;
+        margin-left: 3.5vw;
+      "
+      >SOCIAL MEDIA DESIGN:</span
+    >
+    <img
+      src="images/PresentSimpleSocialMedia.png"
+      style="width: 93%; display: block; margin: 3vh auto 15vh auto"
+    />
+
+    <footer class="footer">
+      <table
+        class="footer"
+        style="text-align: center; padding-bottom: 25vh; margin-left: 4vw"
+      >
+        <tr>
+          <td>
+            <img src="images/maya_levi_favicon.png" style="height: 100px" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h1 style="font-size: 90px; font-weight: 100; margin-top: 10px">
+              Let's Work Together
+            </h1>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button
+              class="button"
+              onclick="location.href='ContactPage.html'"
+              style="cursor: url('Cursor Rubin Pink/link.cur'), pointer"
+            >
+              <p style="cursor: url('Cursor Rubin Pink/link.cur'), pointer">
+                Contact
+              </p>
+            </button>
+          </td>
+        </tr>
+      </table>
+      <table align="center" class="footer" style="padding-bottom: 0">
+        <tr>
+          <td style="text-align: left">
+            <a href="https://www.instagram.com/maya_levi9/" target="_blank"
+              >Instagram</a
+            >
+          </td>
+          <td>mayalevi45@gmail.com</td>
+          <td style="text-align: right">2025</td>
+        </tr>
+        <tr>
+          <td style="text-align: left">
+            <a
+              href="https://www.linkedin.com/in/maya-levi-869219231/"
+              target="_blank"
+              >linkedin</a
+            >
+          </td>
+          <td>+972524216638</td>
+          <td style="text-align: right">&#x00A9; MAYA LEVI Design</td>
+        </tr>
+      </table>
+    </footer>
+
+    <footer class="mobile-footer">
+      <div style="position: relative; width: 100vw; margin-top: 45vh; left: 0">
+        <table
+          style="
+            text-align: center;
+            width: 100%;
+            background-color: #f4f3f0;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100vw;
+          "
+        >
+          <tr style="width: inherit; overflow: hidden">
+            <td
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                margin-top: 1vh;
+              "
+            >
+              <img src="images/maya_levi_favicon.png" style="height: 60px" />
+              <h1 style="font-size: 25px; font-weight: 200; margin-top: 2vh">
+                Let's Work Together
+              </h1>
+              <img src="images/reverse_maya_logo.png" style="height: 60px" />
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding-bottom: 30px">
+              <button
+                class="button"
+                style="
+                  background-color: white;
+                  transform: scale(1.2);
+                  cursor: url('Cursor Rubin Pink/link.cur'), pointer;
+                "
+                onclick="location.href='ContactPage.html'"
+              >
+                <p style="cursor: url('Cursor Rubin Pink/link.cur'), pointer">
+                  Contact
+                </p>
+              </button>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding-bottom: 5px">
+              <a
+                href="https://www.instagram.com/maya_levi9/"
+                target="_blank"
+                style="text-decoration: underline"
+                >Instagram</a
+              >
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding-bottom: 25px">
+              <a
+                href="https://www.linkedin.com/in/maya-levi-869219231/"
+                target="_blank"
+                style="text-decoration: underline"
+                >linkedin</a
+              >
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding-bottom: 5px">mayalevi45@gmail.com</td>
+          </tr>
+
+          <tr>
+            <td style="padding-bottom: 25px">+972524216638</td>
+          </tr>
+
+          <tr>
+            <td style="padding-bottom: 5px">
+              <script>
+                document.write(new Date().getFullYear());
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding-bottom: 3vh">&#x00A9; MAYA LEVI Design</td>
+          </tr>
+        </table>
+      </div>
+    </footer>
+  </body>
+</html>

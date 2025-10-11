@@ -1,0 +1,590 @@
+<html>
+  <head>
+    <title>Maya Levi - About Me</title>
+    <link rel="icon" type="image/x-icon" href="images/maya_levi_favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="master.css" />
+    <style>
+      .projects-container {
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        width: 87%;
+        margin: 20px auto;
+        border-radius: 10px;
+      }
+      .projects {
+        display: flex;
+        gap: 20px;
+        scroll-behavior: smooth;
+        overflow-x: scroll;
+        width: 100%;
+        padding: 0 1vh 0 1vh;
+        white-space: nowrap;
+      }
+      .projects-prev,
+      .projects-next {
+        background-color: #f4f3f0;
+        color: black;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        padding: 10px 20px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        cursor: url("Cursor Rubin Pink/link.cur"), pointer;
+      }
+      .projects-prev {
+        left: 10px;
+      }
+      .projects-next {
+        right: 10px;
+      }
+      .about_me_mobile {
+        margin-left: 2vh;
+      }
+      @media (max-width: 768px) {
+        .projects,
+        .projects-card {
+          transform: scale(0.9);
+        }
+        .projects-container {
+          width: 100%;
+        }
+        .projects-next,
+        .projects-prev {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <table id="navbar" class="navbar" style="width: 100%">
+      <tr>
+        <td>
+          <a href="index.html"
+            ><img src="images/maya_levi_favicon.png" style="width: 40px"
+          /></a>
+        </td>
+        <td style="padding-right: 25vw; text-align: left">
+          <h4 class="logo_name" style="margin: auto 0">
+            <a href="index.html">MAYA LEVI</a>
+          </h4>
+        </td>
+        <td style="padding-right: 5vw" class="not-on-mobile">
+          <h4 style="margin: auto 0"><a href="index.html">Home</a></h4>
+        </td>
+        <td style="padding-right: 5vw" class="not-on-mobile">
+          <h4 style="margin: auto 0"><a href="Projects.html">Projects</a></h4>
+        </td>
+        <td style="padding-right: 5vw" class="not-on-mobile">
+          <h4 style="margin: auto 0"><a href="AboutMe.html">About Me</a></h4>
+        </td>
+        <td class="not-on-mobile">
+          <button
+            class="button"
+            onclick="location.href='ContactPage.html'"
+            style="cursor: url('Cursor Rubin Pink/link.cur'), pointer"
+          >
+            <p style="cursor: url('Cursor Rubin Pink/link.cur'), pointer">
+              Contact
+            </p>
+          </button>
+        </td>
+        <td class="hamburger">
+          <button
+            style="border: none; background-color: transparent"
+            onclick="openHamburger();"
+          >
+            <img src="SVG/hamburger-menu.svg" />
+          </button>
+        </td>
+      </tr>
+    </table>
+    <div
+      style="vertical-align: middle; text-align: left"
+      id="hamburgerManue"
+      class="hamburger_manu"
+    >
+      <button
+        class="close_hamburger"
+        style="
+          border: none;
+          background-color: transparent;
+          margin: 3vh auto 0 3vh;
+          font-size: 20px;
+        "
+        onclick="closeHamburger();"
+      >
+        &#x2715;
+      </button>
+
+      <table
+        align="center"
+        style="margin-top: 10vh; text-align: center"
+        cellspacing="20"
+      >
+        <tr>
+          <td>
+            <h4 style="font-weight: 300">
+              <a href="index.html" onclick="closeHamburger();">Home</a>
+            </h4>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h4 style="font-weight: 300">
+              <a href="Projects.html" onclick="closeHamburger();">Projects</a>
+            </h4>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h4 style="font-weight: 300">
+              <a href="AboutMe.html" onclick="closeHamburger();">About Me</a>
+            </h4>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button
+              style="background-color: white"
+              class="button"
+              onclick="location.href='ContactPage.html'"
+            >
+              <p>Contact</p>
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      function openHamburger() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        document.getElementById("hamburgerManue").style.transform =
+          "translateY(0)";
+        document.getElementById("navbar").style.display = "none";
+        document.body.style.overflow = "hidden";
+      }
+      function closeHamburger() {
+        document.getElementById("hamburgerManue").style.transform =
+          "translateY(-150%)";
+        document.getElementById("navbar").style.display = "table";
+        document.body.style.overflow = "auto";
+      }
+
+      // Select navbar element
+      const navbar = document.querySelector(".navbar");
+      let lastScrollTop = 0; // Track the last scroll position
+      const hideThreshold = 100; // Scroll distance before hiding
+      const showThreshold = 50; // Scroll distance before showing
+
+      // Smooth transition for navbar
+      navbar.style.transition = "transform 0.3s ease-in-out";
+
+      document.addEventListener("scroll", () => {
+        const scrollTop = window.scrollY; // Get current scroll position
+        const maxScroll = 500; // Adjust for transparency effect
+        const opacity = Math.max(0.5, 1 - scrollTop / maxScroll); // Calculate opacity
+
+        // Update navbar background opacity
+        navbar.style.backgroundColor = `rgba(255, 255, 255, ${opacity})`;
+
+        // Check scroll direction
+        if (scrollTop > lastScrollTop && scrollTop > hideThreshold) {
+          // Scrolling down - Hide navbar
+          navbar.style.transform = "translateY(-100%)";
+        } else if (scrollTop < lastScrollTop && scrollTop > showThreshold) {
+          // Scrolling up - Show navbar
+          navbar.style.transform = "translateY(0)";
+        }
+
+        // Update last scroll position
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+      });
+    </script>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <span
+      class="about_me_mobile"
+      style="font-weight: 300; font-style: italic; font-size: 25px; float: left"
+      >ABOUT ME ;</span
+    >
+    <br />
+    <br />
+    <p
+      class="desktop_block"
+      style="margin-bottom: 10vh; margin-left: 2vh; margin-top: 1vh"
+    >
+      Heyyyyy :))<br />I'm Maya, a graphic designer.<br />Creativity has always
+      been my thing, and over the years,<br />I've truly fallen in love with the
+      process - especially during my<br />studies. In my free time, you'll find
+      me experimenting with new<br />creative techniques or doodling in my
+      sketchbook.
+    </p>
+    <p
+      class="mobile_block"
+      style="margin-bottom: 10vh; text-align: center; margin-top: 4vh"
+    >
+      Heyyyyy :))<br />I'm Maya, a graphic designer.<br />Creativity has always
+      been my thing,<br />
+      and over the years,I've truly fallen in love with the process—especially
+      during my<br />studies. In my free time, you'll find me<br />
+      experimenting with newcreative techniques or doodling in my sketchbook.
+    </p>
+
+    <div class="projects-container" style="margin-bottom: 10vh">
+      <button class="projects-prev">&#10094;</button>
+      <div class="projects">
+        <table class="projects-card">
+          <tr>
+            <td style="text-align: left">[2]</td>
+            <td style="text-align: right">2023</td>
+          </tr>
+          <tr>
+            <td style="text-align: left">Chocolate Cake</td>
+            <td style="text-align: right">[Motion Design]</td>
+          </tr>
+          <tr>
+            <td colspan="2"><hr /></td>
+          </tr>
+          <tr>
+            <td colspan="2"><img src="images/chocolate_cake.png" /></td>
+          </tr>
+          <tr>
+            <td colspan="2"><hr /></td>
+          </tr>
+          <tr>
+            <td style="text-align: left">[Motion Design]</td>
+            <td style="text-align: right">
+              <button
+                class="button"
+                onclick="location.href='ChocolateCake.html';"
+              >
+                <p>See More</p>
+              </button>
+            </td>
+          </tr>
+        </table>
+        <table class="projects-card">
+          <tr>
+            <td style="text-align: left">[4]</td>
+            <td style="text-align: right">2023</td>
+          </tr>
+          <tr>
+            <td style="text-align: left">Shenkar 2023</td>
+            <td style="text-align: right">[Brand Design]</td>
+          </tr>
+          <tr>
+            <td colspan="2"><hr /></td>
+          </tr>
+          <tr>
+            <td colspan="2"><img src="images/shenkar2023.png" /></td>
+          </tr>
+          <tr>
+            <td colspan="2"><hr /></td>
+          </tr>
+          <tr>
+            <td style="text-align: left">[Brand Design, Web Design]</td>
+            <td style="text-align: right">
+              <button class="button" onclick="location.href='Shenkar.html';">
+                <p>See More</p>
+              </button>
+            </td>
+          </tr>
+        </table>
+        <table class="projects-card">
+          <tr>
+            <td style="text-align: left">[1]</td>
+            <td style="text-align: right">2023</td>
+          </tr>
+          <tr>
+            <td style="text-align: left">Memoria</td>
+            <td style="text-align: right">[Brand Design]</td>
+          </tr>
+          <tr>
+            <td colspan="2"><hr /></td>
+          </tr>
+          <tr>
+            <td colspan="2"><img src="images/memoria.png" /></td>
+          </tr>
+          <tr>
+            <td colspan="2"><hr /></td>
+          </tr>
+          <tr>
+            <td style="text-align: left">[Final Project, Brand Design]</td>
+            <td style="text-align: right">
+              <button class="button" onclick="location.href='Memoria.html';">
+                <p>See More</p>
+              </button>
+            </td>
+          </tr>
+        </table>
+        <table class="projects-card">
+          <tr>
+            <td style="text-align: left">[3]</td>
+            <td style="text-align: right">2023</td>
+          </tr>
+          <tr>
+            <td style="text-align: left">Present Simple</td>
+            <td style="text-align: right">[Brand Design]</td>
+          </tr>
+          <tr>
+            <td colspan="2"><hr /></td>
+          </tr>
+          <tr>
+            <td colspan="2"><img src="images/present_simple.png" /></td>
+          </tr>
+          <tr>
+            <td colspan="2"><hr /></td>
+          </tr>
+          <tr>
+            <td style="text-align: left">[Brand Design, Web Design]</td>
+            <td style="text-align: right">
+              <button
+                class="button"
+                onclick="location.href='PresentSimple.html';"
+              >
+                <p>See More</p>
+              </button>
+            </td>
+          </tr>
+        </table>
+        <table class="projects-card">
+          <tr>
+            <td style="text-align: left">[5]</td>
+            <td style="text-align: right">2023</td>
+          </tr>
+          <tr>
+            <td style="text-align: left">Raw</td>
+            <td style="text-align: right">[Brand Design]</td>
+          </tr>
+          <tr>
+            <td colspan="2"><hr /></td>
+          </tr>
+          <tr>
+            <td colspan="2"><img src="images/raw.png" /></td>
+          </tr>
+          <tr>
+            <td colspan="2"><hr /></td>
+          </tr>
+          <tr>
+            <td style="text-align: left">[Brand Design, Web Design]</td>
+            <td style="text-align: right">
+              <button class="button" onclick="location.href='Raw.html';">
+                <p>See More</p>
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <button class="projects-next">&#10095;</button>
+    </div>
+
+    <script>
+      const projects = document.querySelector(".projects");
+      const prevButton = document.querySelector(".projects-prev");
+      const nextButton = document.querySelector(".projects-next");
+      const cards = [...document.querySelectorAll(".projects-card")]; // Convert NodeList to Array
+
+      // Set the scroll position to the original set of cards
+      projects.scrollLeft = 0;
+
+      // Function to check and reposition for infinite scrolling
+      function checkLoop() {
+        if (projects.scrollLeft <= 0) {
+          projects.scrollLeft = projects.scrollWidth;
+        } else if (
+          projects.scrollLeft + projects.clientWidth >=
+          projects.scrollWidth - 1
+        ) {
+          projects.scrollLeft = 0;
+        }
+      }
+
+      // Button Scroll Events
+      prevButton.addEventListener("click", () => {
+        projects.scrollBy({ left: -300, behavior: "smooth" });
+        setTimeout(checkLoop, 100); // Check after animation
+      });
+
+      nextButton.addEventListener("click", () => {
+        projects.scrollBy({ left: 300, behavior: "smooth" });
+        setTimeout(checkLoop, 100);
+      });
+
+      // Prevent freeze issue on resize
+      window.addEventListener("resize", () => {
+        projects.scrollLeft = projects.scrollWidth / 2 - projects.clientWidth;
+      });
+    </script>
+
+    <footer class="footer">
+      <table
+        class="footer"
+        style="text-align: center; padding-bottom: 25vh; margin-left: 4vw"
+      >
+        <tr>
+          <td>
+            <img src="images/maya_levi_favicon.png" style="height: 100px" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h1 style="font-size: 90px; font-weight: 100; margin-top: 10px">
+              Let's Work Together
+            </h1>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button
+              class="button"
+              onclick="location.href='ContactPage.html'"
+              style="cursor: url('Cursor Rubin Pink/link.cur'), pointer"
+            >
+              <p style="cursor: url('Cursor Rubin Pink/link.cur'), pointer">
+                Contact
+              </p>
+            </button>
+          </td>
+        </tr>
+      </table>
+      <table align="center" class="footer" style="padding-bottom: 0">
+        <tr>
+          <td style="text-align: left">
+            <a href="https://www.instagram.com/maya_levi9/" target="_blank"
+              >Instagram</a
+            >
+          </td>
+          <td>mayalevi45@gmail.com</td>
+          <td style="text-align: right">2025</td>
+        </tr>
+        <tr>
+          <td style="text-align: left">
+            <a
+              href="https://www.linkedin.com/in/maya-levi-869219231/"
+              target="_blank"
+              >linkedin</a
+            >
+          </td>
+          <td>+972524216638</td>
+          <td style="text-align: right">&#x00A9; MAYA LEVI Design</td>
+        </tr>
+      </table>
+    </footer>
+
+    <footer class="mobile-footer">
+      <div style="position: relative; width: 100vw; margin-top: 45vh; left: 0">
+        <table
+          style="
+            text-align: center;
+            width: 100%;
+            background-color: #f4f3f0;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100vw;
+          "
+        >
+          <tr style="width: inherit; overflow: hidden">
+            <td
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                margin-top: 1vh;
+              "
+            >
+              <img src="images/maya_levi_favicon.png" style="height: 60px" />
+              <h1 style="font-size: 25px; font-weight: 200; margin-top: 2vh">
+                Let's Work Together
+              </h1>
+              <img src="images/reverse_maya_logo.png" style="height: 60px" />
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding-bottom: 30px">
+              <button
+                class="button"
+                style="
+                  background-color: white;
+                  transform: scale(1.2);
+                  cursor: url('Cursor Rubin Pink/link.cur'), pointer;
+                "
+                onclick="location.href='ContactPage.html'"
+              >
+                <p style="cursor: url('Cursor Rubin Pink/link.cur'), pointer">
+                  Contact
+                </p>
+              </button>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding-bottom: 5px">
+              <a
+                href="https://www.instagram.com/maya_levi9/"
+                target="_blank"
+                style="text-decoration: underline"
+                >Instagram</a
+              >
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding-bottom: 25px">
+              <a
+                href="https://www.linkedin.com/in/maya-levi-869219231/"
+                target="_blank"
+                style="text-decoration: underline"
+                >linkedin</a
+              >
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding-bottom: 5px">mayalevi45@gmail.com</td>
+          </tr>
+
+          <tr>
+            <td style="padding-bottom: 25px">+972524216638</td>
+          </tr>
+
+          <tr>
+            <td style="padding-bottom: 5px">
+              <script>
+                document.write(new Date().getFullYear());
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding-bottom: 3vh">&#x00A9; MAYA LEVI Design</td>
+          </tr>
+        </table>
+      </div>
+    </footer>
+  </body>
+</html>
