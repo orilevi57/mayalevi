@@ -93,10 +93,10 @@
     })();
     holder.remove();
 
-    const tex = new T.TextureLoader().load('media/hero-character.webp');
+    const tex = new T.TextureLoader().load('hero-character.webp');
     tex.encoding = T.sRGBEncoding;
     const charGeo = new T.PlaneGeometry(0.78, 0.78 * 640 / 501);
-    const memTex = new T.TextureLoader().load('media/hero-memoria.webp'); memTex.encoding = T.sRGBEncoding;
+    const memTex = new T.TextureLoader().load('hero-memoria.webp'); memTex.encoding = T.sRGBEncoding;
     const memGeo = new T.PlaneGeometry(0.9, 0.9 * 366 / 426);
     const horsePal = ['#3346E0', '#7A88F4', '#F59AC0'];   // Encore blue with a pink rim
 
